@@ -27,8 +27,12 @@ describe("ValueNft", function () {
     const total = await nft.totalValue();
     expect(total).to.equal(501);
   });
-  it("should be able to burn", async function () {
-    await expect(nft.connect(user1).burn(
+  it("user1 should not be able to mint himselfe", async function () {
+    await expect(nft.connect(user1).reward(user1.address, 500))
+      .to.be.revertedWith("ValueNft: only minter can mint");
   });
-
+  it("user2 should not be able to mint himselfe", async function () {
+    await expect(nft.connect(user2).reward(user2.address, 500))
+      .to.be.revertedWith("ValueNft: only minter can mint");
+  });
 });

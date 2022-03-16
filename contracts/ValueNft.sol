@@ -10,11 +10,23 @@ contract ValueNft is ERC721 {
 
   uint256 private _totalValue;
 
+  address private _minter;
+
   mapping(address => uint256) private _userValue;
 
-  constructor() ERC721("RewardToken", "RT") {}
+  constructor() ERC721("RewardToken", "RT") {
+    _minter = _msgSender();
+  }
 
-  function reward(address receiver, uint256 value) public returns(uint256) {
+  modifier onlyMinter() {
+    require(_msgSender() == _minter, "ValueNft: only minter can mint"); 
+    _;
+  }
+
+  function reward(address receiver, uint256 value)
+    public
+    onlyMinter
+    returns(uint256) {
     _tokenIds.increment();
     uint256 newItemId = _tokenIds.current();
     _mint(receiver, newItemId);
@@ -22,6 +34,10 @@ contract ValueNft is ERC721 {
     _userValue[receiver] += value;
     require(value > 0, "ValueNft: value must be greater than 0");
     return newItemId;
+  }
+
+  function minter() public view returns(address) {
+    return _minter;
   }
 
   function totalValue() external view returns(uint256) {
