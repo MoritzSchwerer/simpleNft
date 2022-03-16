@@ -25,6 +25,13 @@ module.exports = {
       tasks: ["compile"],
       files: ["./contracts"],
       verbose: true,
+    },
+    test: {
+      tasks: [{
+        command: 'test'
+      }],
+      files: ['./test/**/*', './contracts/**/*'],
+      verbose: true
     }
   },
   defaultNetwork: "localhost",
@@ -32,7 +39,7 @@ module.exports = {
     hardhat: {
       forking: {
         url: `https://speedy-nodes-nyc.moralis.io/${process.env.MORALIS_API_KEY}/avalanche/mainnet`,
-        blockNumber: 10426460,
+        blockNumber: 12176257,
       },
     },
   },

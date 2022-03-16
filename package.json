@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tree": "tree -I node_modules|typescript|artifacts|cache",
+    "fork:main": "hh node --network hardhat",
+    "watch:compile": "hh watch compile",
+    "watch:test": "hh watch test"
   },
   "keywords": [],
   "author": "",
