@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tree": "tree -I node_modules|typescript|artifacts|cache",
+    "tree": "tree -I 'node_modules|typescript|artifacts|cache'",
     "fork:main": "hh node --network hardhat",
     "watch:compile": "hh watch compile",
     "watch:test": "hh watch test"
