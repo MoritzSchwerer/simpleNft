@@ -7,7 +7,8 @@
     "tree": "tree -I 'node_modules|typescript|artifacts|cache'",
     "fork:main": "hh node --network hardhat",
     "watch:compile": "hh watch compile",
-    "watch:test": "hh watch test --network hardhat"
+    "watch:test": "hh watch test --network hardhat",
+    "prettier": "prettier --write 'contracts/**/*.sol'"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,8 @@
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.6.1",
     "hardhat": "^2.9.1",
-    "hardhat-watcher": "^2.1.1"
+    "hardhat-watcher": "^2.1.1",
+    "prettier": "^2.6.0",
+    "prettier-plugin-solidity": "^1.0.0-beta.19"
   }
 }
