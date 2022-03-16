@@ -7,7 +7,7 @@
     "tree": "tree -I 'node_modules|typescript|artifacts|cache'",
     "fork:main": "hh node --network hardhat",
     "watch:compile": "hh watch compile",
-    "watch:test": "hh watch test"
+    "watch:test": "hh watch test --network hardhat"
   },
   "keywords": [],
   "author": "",

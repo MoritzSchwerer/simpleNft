@@ -34,8 +34,8 @@ module.exports = {
       verbose: true
     }
   },
-  defaultNetwork: "localhost",
-  networks: {
+  defaultNetwork: "hardhat",
+  /*networks: {
     hardhat: {
       forking: {
         url: `https://speedy-nodes-nyc.moralis.io/${process.env.MORALIS_API_KEY}/avalanche/mainnet`,
@@ -43,4 +43,5 @@ module.exports = {
       },
     },
   },
+  */
 };

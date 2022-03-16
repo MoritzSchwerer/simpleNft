@@ -32,8 +32,9 @@ describe("SimpleNft", function () {
   });
 
   it("Should transfer nft to new holder", async function () {
-    await nft.connect(user1)["safeTransferFrom(address,address,uint256)"]
-      (user1.address, user2.address, 1);
+    await nft.connect(user1)
+    ["safeTransferFrom(address,address,uint256)"]
+    (user1.address, user2.address, 1);
 
     const balanceOfUser1 = await nft.balanceOf(user1.address);
     const balanceOfUser2 = await nft.balanceOf(user2.address);
@@ -41,5 +42,4 @@ describe("SimpleNft", function () {
     expect(balanceOfUser1).to.equal(0);
     expect(balanceOfUser2).to.equal(1);
   });
-
 });
